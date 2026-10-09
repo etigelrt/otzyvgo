@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
     <title>ОтзывGo</title>
- 
+
     <style>
- 
+
         * {
             box-sizing: border-box;
         }
- 
+
         body {
             margin: 0;
             min-height: 100vh;
- 
+
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -24,7 +24,7 @@
                 "Segoe UI",
                 Arial,
                 sans-serif;
- 
+
             background: linear-gradient(
                 -45deg,
                 #fff1cf,
@@ -34,18 +34,18 @@
             );
             background-size: 400% 400%;
             animation: bgShift 14s ease infinite;
- 
+
             color: #1c1c1e;
- 
+
             display: flex;
             justify-content: center;
             align-items: center;
- 
+
             padding: 20px;
- 
+
             overflow-x: hidden;
         }
- 
+
         body::before,
         body::after {
             content: "";
@@ -56,7 +56,7 @@
             z-index: 0;
             pointer-events: none;
         }
- 
+
         body::before {
             width: 340px;
             height: 340px;
@@ -65,7 +65,7 @@
             left: -80px;
             animation: float1 16s ease-in-out infinite;
         }
- 
+
         body::after {
             width: 380px;
             height: 380px;
@@ -74,329 +74,328 @@
             right: -100px;
             animation: float2 18s ease-in-out infinite;
         }
- 
+
         @keyframes bgShift {
             0%   { background-position: 0% 50%; }
             50%  { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
- 
+
         @keyframes float1 {
             0%, 100% { transform: translate(0, 0); }
             50%      { transform: translate(90px, 60px); }
         }
- 
+
         @keyframes float2 {
             0%, 100% { transform: translate(0, 0); }
             50%      { transform: translate(-90px, -60px); }
         }
- 
+
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(8px); }
             to   { opacity: 1; transform: translateY(0); }
         }
- 
+
         .card {
             position: relative;
             z-index: 1;
- 
+
             width: 100%;
             max-width: 420px;
- 
+
             background: rgba(255, 255, 255, 0.55);
- 
+
             -webkit-backdrop-filter: blur(28px) saturate(180%);
             backdrop-filter: blur(28px) saturate(180%);
- 
+
             border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 36px;
- 
+
             padding: 38px 24px 26px;
- 
+
             text-align: center;
- 
+
             box-shadow:
                 0 20px 60px rgba(0, 0, 0, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.8);
         }
- 
+
         .logo {
             width: 84px;
             height: 84px;
- 
+
             margin: 0 auto 18px;
- 
+
             border-radius: 24px;
- 
+
             background: linear-gradient(180deg, #ffd45c, #ffc83d);
- 
+
             display: flex;
             align-items: center;
             justify-content: center;
- 
+
             font-size: 44px;
             font-weight: 700;
- 
+
             box-shadow: 0 8px 20px rgba(255, 200, 61, 0.35);
         }
- 
+
         h1 {
             margin: 0;
- 
+
             font-size: 30px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
- 
+
         .address {
             margin-top: 8px;
- 
+
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 6px;
- 
+
             color: #6e6e73;
- 
+
             font-size: 15px;
         }
- 
+
         .message {
             margin-top: 30px;
- 
+
             font-size: 20px;
             font-weight: 600;
         }
- 
+
         .heart {
             color: #ffc83d;
         }
- 
+
         .description {
-            margin: 10px auto 0;
- 
+         margin: 10px auto 0;
+
             max-width: 320px;
- 
+
             color: #6e6e73;
- 
+
             font-size: 15px;
- 
+
             line-height: 1.45;
         }
- 
+
         .stars {
             margin-top: 18px;
- 
+
             font-size: 26px;
- 
+
             letter-spacing: 4px;
- 
+
             color: #ffbf19;
         }
- 
+
         .review-button {
             width: 100%;
- 
+
             margin-top: 22px;
- 
+
             border: none;
- 
+
             border-radius: 999px;
- 
+
             padding: 17px 18px;
- 
+
             background: rgba(28, 28, 30, 0.92);
- 
+
             color: white;
- 
+
             font-size: 17px;
             font-weight: 600;
- 
+
             cursor: pointer;
- 
+
             transition: transform 0.15s ease;
         }
- 
+
         .review-button:hover {
             transform: scale(0.97);
         }
- 
+
         .platforms {
             display: none;
- 
+
             margin-top: 12px;
- 
+
             gap: 10px;
         }
- 
+
         .platform {
             width: 100%;
- 
+
             display: flex;
             align-items: center;
             justify-content: space-between;
- 
+
             padding: 11px 16px;
- 
+
             background: rgba(255, 255, 255, 0.6);
- 
+
             border: 1px solid rgba(255, 255, 255, 0.85);
- 
+
             border-radius: 18px;
- 
+
             text-decoration: none;
- 
+
             color: #1c1c1e;
- 
+
             font-size: 16px;
             font-weight: 600;
- 
+
             transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
- 
+
             animation: fadeUp 0.4s ease both;
         }
- 
+
         .platform:hover {
             transform: scale(0.97);
             background: rgba(255, 255, 255, 0.9);
             border-color: rgba(0, 0, 0, 0.08);
         }
- 
+
         .platform-left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
- 
+
         .platform-icon {
             display: block;
         }
- 
+
         .arrow {
             color: #aeaeb2;
- 
+
             font-size: 22px;
         }
- 
+
         .nfc-info {
             margin-top: 22px;
- 
+
             color: #8e8e93;
- 
+
             font-size: 13px;
- 
+
             line-height: 1.4;
         }
- 
+
         .brand {
             margin-top: 18px;
- 
+
             color: #aeaeb2;
- 
+
             font-size: 12px;
- 
+
             font-weight: 500;
         }
- 
+
     </style>
- 
+
 </head>
- 
- 
+
+
 <body>
- 
+
     <main class="card">
- 
- 
+
+
         <div class="logo" id="logo"></div>
- 
- 
+
+
         <h1 id="businessName">Загрузка...</h1>
- 
- 
+
+
         <div class="address">
- 
+
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#8e8e93">
                 <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
             </svg>
- 
+
             <span id="address"></span>
- 
+
         </div>
- 
- 
+
+
         <div class="message">
- 
+
             Спасибо, что посетили нас!
- 
+
             <span class="heart">♥</span>
- 
+
         </div>
- 
- 
+
+
         <p class="description">
- 
+
             Нам важно ваше мнение.
             Оставьте отзыв
             на удобной для вас площадке.
- 
+
         </p>
- 
- 
+
+
         <div class="stars">★★★★★</div>
- 
- 
+
+
         <button class="review-button" onclick="showReviews()">
- 
+
             ★ &nbsp; Оставить отзыв
- 
+
         </button>
- 
- 
+
+
         <div class="platforms" id="platforms">
- 
- 
+
+
             <a class="platform" id="gis" target="_blank" rel="noopener">
- 
+
                 <span class="platform-left">
- 
+
                     <svg class="platform-icon" width="34" height="34" viewBox="0 0 34 34">
                         <rect width="34" height="34" rx="9" fill="#12c56b"/>
                         <path d="M17 7c-4.4 0-8 3.6-8 8 0 3.3 2 6.3 5 7.5V26h6v-3.5c3-1.2 5-4.2 5-7.5 0-4.4-3.6-8-8-8z" fill="#fff"/>
                         <circle cx="17" cy="15" r="3.2" fill="#12c56b"/>
                     </svg>
- 
+
                     2ГИС
- 
+
                 </span>
- 
+
                 <span class="arrow">›</span>
- 
+
             </a>
- 
- 
+
+
             <a class="platform" id="yandex" target="_blank" rel="noopener">
- 
+
                 <span class="platform-left">
- 
-                    <svg class="platform-icon" width="34" height="34" viewBox="0 0 34 34">
+                 <svg class="platform-icon" width="34" height="34" viewBox="0 0 34 34">
                         <rect width="34" height="34" rx="9" fill="#fc3f1d"/>
                         <text x="17" y="23" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" font-family="Arial">Я</text>
                     </svg>
- 
+
                     Яндекс Карты
- 
+
                 </span>
- 
+
                 <span class="arrow">›</span>
- 
+
             </a>
- 
- 
+
+
             <a class="platform" id="google" target="_blank" rel="noopener">
- 
+
                 <span class="platform-left">
- 
+
                     <svg class="platform-icon" width="34" height="34" viewBox="0 0 34 34">
                         <rect width="34" height="34" rx="9" fill="#fff" stroke="#e4e0d8"/>
                         <path fill="#4285F4" d="M24.6 17.2c0-.6-.1-1.2-.2-1.8H17v3.4h4.3c-.2 1-.8 1.9-1.6 2.5v2h2.6c1.5-1.4 2.3-3.5 2.3-6.1z"/>
@@ -404,88 +403,88 @@
                         <path fill="#FBBC05" d="M12.5 18.5c-.2-.5-.3-1-.3-1.5s.1-1 .3-1.5v-2.1H9.8C9.3 14.4 9 15.7 9 17s.3 2.6.8 3.6l2.7-2.1z"/>
                         <path fill="#EA4335" d="M17 11.8c1.2 0 2.3.4 3.1 1.2l2.3-2.3C21 9.4 19.2 8.6 17 8.6c-3.2 0-5.9 1.8-7.2 4.5l2.7 2.1c.7-1.9 2.4-3.4 4.5-3.4z"/>
                     </svg>
- 
+
                     Google
- 
+
                 </span>
- 
+
                 <span class="arrow">›</span>
- 
+
             </a>
- 
- 
+
+
         </div>
- 
- 
+
+
         <div class="nfc-info">
- 
+
             Откройте страницу через NFC
             или отсканируйте QR-код.
- 
+
         </div>
- 
- 
+
+
         <div class="brand">ОтзывGo</div>
- 
- 
+
+
     </main>
- 
- 
+
+
     <script src="data/businesses.js"></script>
- 
- 
+
+
     <script>
- 
+
         const params =
             new URLSearchParams(window.location.search);
- 
+
         const id =
             params.get("business") || "limonad";
- 
- 
+
+
         const business =
             businesses[id];
- 
- 
+
+
         if (!business) {
- 
+
             document.getElementById("businessName")
                 .textContent = "Бизнес не найден";
- 
+
         } else {
- 
+
             document.getElementById("logo")
                 .textContent = business.logo;
- 
+
             document.getElementById("businessName")
                 .textContent = business.name;
- 
+
             document.getElementById("address")
                 .textContent = business.address;
- 
- 
+
+
             document.getElementById("gis")
                 .href = business.gis;
- 
+
             document.getElementById("yandex")
                 .href = business.yandex;
- 
+
             document.getElementById("google")
                 .href = business.google;
- 
+
         }
- 
- 
+
+
         function showReviews() {
- 
+
             document.getElementById("platforms")
                 .style.display = "grid";
- 
+
         }
- 
+
     </script>
- 
- 
+
+
 </body>
- 
+
 </html>
